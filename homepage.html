@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            section{
+                height: 100vh;
+                width: 100vw;
+                background-color: rgb(99, 134, 200);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .emojis{
+                font-size: 18rem;
+                transition-duration: 480ms;
+            }
+            .text{
+                font-size: 5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="emojis">
+                &#129302;
+                <!-- &#127814; -->
+            </div>
+            <span class="text">Welcome to <a href="index.html">Robotics</a></span>
+            <div class="emojis">
+                &#128241;
+                <!-- 💦 -->
+            </div>
+        </section>
+        <script>
+            const emojis = document.getElementsByClassName("emojis");
+            let turn = 1;
+            setInterval(() => {
+                turn*=-1;
+                emojis[0].style.transform=`rotate(${turn*45}deg)`;
+                emojis[1].style.transform=`rotate(${-1*turn*45}deg)`;
+            }, 500);
+        </script>
+    </body>
+</html>
